@@ -11,7 +11,7 @@
 - [교보문고](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9791190014816&orderClick=LAG&Kc=)
 - [알라딘](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=237335978)
 
-![입체표지]()
+![입체표지](https://user-images.githubusercontent.com/21074282/78733721-31b66300-7981-11ea-84af-f5bc4fb7992d.png)
 
 ## 책 소개
 
