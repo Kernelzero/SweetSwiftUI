@@ -15,6 +15,10 @@ struct Product {
   let price: Int
   let description: String
   var isFavorite: Bool = false
+  
+  private enum CodingKeys: CodingKey {
+    case name, imageName, price, description, isFavorite
+  }
 }
 
 extension Product: Codable {}

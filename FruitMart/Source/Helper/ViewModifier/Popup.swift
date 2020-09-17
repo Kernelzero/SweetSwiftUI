@@ -40,21 +40,22 @@ fileprivate struct Popup<Message: View>: ViewModifier {
   }
 
   private var popupContent: some View {
-    GeometryReader {
+    GeometryReader { g in
       VStack { self.message }
-        .frame(width: self.size?.width ?? $0.size.width * 0.6,
-               height: self.size?.height ?? $0.size.height * 0.25)
+        .frame(width: self.size?.width ?? g.size.width * 0.6,
+               height: self.size?.height ?? g.size.height * 0.25)
         .background(Color.primary.colorInvert())
         .cornerRadius(12)
         .shadow(color: .primaryShadow, radius: 15, x: 5, y: 5)
         .overlay(self.checkCircleMark, alignment: .top)
+        .frame(width: g.frame(in: .local).width, height: g.frame(in: .local).height)
     }
   }
 
   private var checkCircleMark: some View {
     Symbol("checkmark.circle.fill", color: .peach)
       .font(Font.system(size: 60).weight(.semibold))
-      .background(Color.white.scaleEffect(0.8))
+      .background(Color.white.scaleEffect(0.6))
       .offset(x: 0, y: -20)
   }
 }

@@ -19,9 +19,7 @@ struct Home: View {
   var body: some View {
     NavigationView {
       VStack(spacing: 0) {
-        if showFavorite {
-          favoriteProducts
-        }
+        showFavorite ? AnyView(favoriteProducts) : AnyView(EmptyView())
         darkerDivider
         productList
       }
@@ -50,15 +48,13 @@ private extension Home {
   var productList: some View {
     List {
       ForEach(store.products) { product in
-        HStack {
-          ProductRow(product: product, quickOrder: self.$quickOrder)
-          NavigationLink(destination: ProductDetailView(product: product)) {
-            EmptyView()
-          }.frame(width: 0).hidden()
+        NavigationLink(destination: ProductDetailView(product: product)) {
+          ProductRow(product: product, quickOrder: $quickOrder)
         }
       }
       .listRowBackground(Color.background)
     }
+    .listStyle(PlainListStyle())
     .background(Color.background)
   }
 

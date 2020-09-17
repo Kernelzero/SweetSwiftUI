@@ -63,11 +63,14 @@ private extension FavoriteProductScrollView {
   }
   
   func eachProduct(_ product: Product) -> some View {
-    GeometryReader {
-      ResizedImage(product.imageName, renderingMode: .original)
-        .clipShape(Circle())
-        .frame(width: 90, height: 90)
-        .scaleEffect(self.scaledValue(from: $0))
+    GeometryReader { g in
+      VStack {
+        ResizedImage(product.imageName, renderingMode: .original)
+          .clipShape(Circle())
+          .frame(width: 90, height: 90)
+          .scaleEffect(self.scaledValue(from: g))
+      }
+      .frame(width: 105, height: 105)
     }
     .frame(width: 105, height: 105)
   }
