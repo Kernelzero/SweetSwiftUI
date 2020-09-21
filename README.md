@@ -48,8 +48,8 @@
 ## 목차
 
 Chapter 1. Hello, SwiftUI
-	- 1-1 SwiftUI 소개
-	- 1-2 Hello SwiftUI
+    - 1-1 SwiftUI 소개
+    - 1-2 Hello SwiftUI
 	- SwiftUI 체크 리스트
 	- Swift 문법 이야기 <1>
 
